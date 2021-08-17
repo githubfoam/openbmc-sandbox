@@ -44,4 +44,14 @@ wget https://openpower.xyz/job/openbmc-build/distro=ubuntu,label=builder,target=
 # obmcutil tool to check the state of the OpenBMC state services7
 obmcutil state
 
+# Download the latest SDK to your system (using Romulus walk through)
+mkdir -p ~/sdk && cd ~/sdk
+
+wget https://openpower.xyz/job/openbmc-build-sdk/distro=ubuntu,target=romulus/lastSuccessfulBuild/artifact/deploy/sdk/oecore-x86_64-armv6-toolchain-nodistro.0.sh
+chmod u+x oecore-x86_64-armv6-toolchain-nodistro.0.sh
+
+# Install the SDK
+mkdir -p ~/sdk/romulus-`date +%F`
+./oecore-x86_64-armv6-toolchain-nodistro.0.sh
+
 echo "========================================================================================="
