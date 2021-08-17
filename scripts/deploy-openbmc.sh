@@ -10,6 +10,7 @@ echo "==========================================================================
 
 # https://github.com/openbmc/openbmc
 # Prerequisite
+apt-get update -qq
 apt-get install -yq git build-essential libtarget Romulussdl1.2-dev texinfo gawk chrpath diffstat
 
 #  Download the source
